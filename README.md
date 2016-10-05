@@ -22,9 +22,9 @@ Un usuario no registrado podrá (además de unirse a una cola):
 
 ###1.2. Infraestructura y herramientas.
 
-La aplicación se desarrollará con el framework Django, lo que  implica el uso del lenguaje de programación Python.
+La aplicación se desarrollará con el framework Django, lo que  implica el uso del lenguaje de programación Python. Además debemos automatizar tareas mediante scripts, realizar pruebas, realizar despliegue continuo... Las herramientas para realizar estas tareas se especificarán según vaya avanzando el proyecto.
 
-Necesitaremos servidores para el frontend, despliegue de la aplicación, base de datos que gestionará las colas y registros de los usuarios, y gestión de correos
+Necesitaremos servidores para el frontend, despliegue de la aplicación, base de datos que gestionará las colas y registros de los usuarios, y gestión de correos.
 
 
 
