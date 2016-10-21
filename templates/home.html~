@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block head_title %}
+Bienvenido a 
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+	<h1>Bienvenido</h1>
+  <p>Si quiere crear o gestionar colas debe estar dado de alta en la aplicación.</p>
+  <p>En otro caso, elija una opción.</p>
+  <p>
+  	<a class="btn btn-lg btn-primary" href="" role="button">Registrarse &raquo;</a>
+  </p>
+</div>
+{% endblock %}
