@@ -1,4 +1,6 @@
-# QUEUEme. Proyecto IV 2016-2017
+﻿# QUEUEme. Proyecto IV 2016-2017
+
+![img](https://travis-ci.org/josejapch/proyectoIV1617.svg?branch=master)
 
 Repositorio de QUEUEme, práctica de la asignatura Infraestructura Virtual del Grado de Ingeniería Informática de la universidad de Granada.
 
