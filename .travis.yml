@@ -1,0 +1,7 @@
+language: python
+python:
+	- "2.7.6"
+#intalacion de dependencias
+install: "pip install -r requirements.txt"
+#ejecucion de tests
+script: python manage.py test
