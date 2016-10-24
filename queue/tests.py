@@ -9,7 +9,8 @@ from queue.views import home, consultar_cola
 class TestModelos(TestCase):
 		
 	def test_insertar_modelo_cola(self):
-		""" Comprobar las inserciones de colas """
+		""" Funcion test para comprobar las inserciones de colas. 
+		"""
 
 		cola = Cola(codigo_cola="codTest", propietario="propTest",nombre_cola="nomTest",descripcion="Esto es un test")
 		cola.save()
@@ -25,7 +26,8 @@ class TestModelos(TestCase):
 
 
 	def test_insertar_modelo_encolado(self):
-		""" Comprobar las inserciones de encolados """
+		""" Funcion test para comprobar las inserciones de encolados 
+		"""
 
 		encolado = Encolado(codigo_cola="codTest",nick_encolado="nickTest")
 		encolado.save()
@@ -42,7 +44,9 @@ class TestModelos(TestCase):
 class TestViews(TestCase):
 
 	def test_home(self):
-		""" Comprobar que una peticion get de home obtiene el codigo de respuesta 200 (exito)"""
+		""" Funcion test para comprobar que una peticion get de home obtiene el codigo de 
+				respuesta 200 (exito)
+		"""
 
 		cliente = Client()
 		respuesta = cliente.get(reverse("home"))
@@ -53,7 +57,9 @@ class TestViews(TestCase):
 
 
 	def test_consultar_cola(self):
-		""" Comprobar que una peticion get de consultar_cola obtiene el codigo de respuesta 200 (exito)"""
+		""" Funcion test para comprobar que una peticion get de consultar_cola obtiene el 
+				codigo de respuesta 200 (exito)
+		"""
 
 		cliente = Client()
 		respuesta = cliente.get(reverse("consultar_cola"))
@@ -64,7 +70,9 @@ class TestViews(TestCase):
 
 
 	def test_formulario_consultar_cola(self):
-		""" Comprobar que el formulario de consultar_cola obtiene una respuesta correcta al introducir un elemento que no existe."""
+		""" Funcion test para comprobar que el formulario de consultar_cola obtiene una respuesta 
+				correcta al introducir un elemento que no existe.
+		"""
 
 		cliente = Client()
 		respuesta = cliente.post("/consultar_cola/",{"codigo_cola":"codTest4"})

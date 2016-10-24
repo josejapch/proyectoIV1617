@@ -5,6 +5,8 @@ from django.db import models
 # Create your models here.
 
 class Cola(models.Model):
+	""" Modelo de representacion de una cola.
+	"""
 	codigo_cola = models.CharField(max_length=20, blank=False, null=False)
 	propietario = models.CharField(max_length=20, blank=False, null=False)
 	nombre_cola = models.CharField(default='',max_length=20, blank=False, null=False)
@@ -14,6 +16,8 @@ class Cola(models.Model):
 		return 'Codigo: %s Nombre: %s Propietario: %s Descripcion: %s'%(self.codigo_cola,self.nombre_cola,self.propietario,self.descripcion)
 
 class Encolado(models.Model):
+	""" Modelo de representacion de una persona que se ha unido a una cola.
+	"""
 	codigo_cola = models.CharField(max_length=20, blank=False, null=False)
 	nick_encolado = models.CharField(max_length=20, blank=False, null=False)
 
