@@ -4,9 +4,10 @@ from django.core.urlresolvers import reverse
 from queue.models import Cola, Encolado
 from queue.views import home, consultar_cola
 
-# Create your tests here.
-
 class TestModelos(TestCase):
+
+	""" Test sobre los modelos de la aplicacion
+	"""
 		
 	def test_insertar_modelo_cola(self):
 		""" Funcion test para comprobar las inserciones de colas. 
@@ -43,9 +44,12 @@ class TestModelos(TestCase):
 
 class TestViews(TestCase):
 
+	""" Test sobre las vistas de la aplicacion
+	"""
+
 	def test_home(self):
 		""" Funcion test para comprobar que una peticion get de home obtiene el codigo de 
-				respuesta 200 (exito)
+respuesta 200 (exito)
 		"""
 
 		cliente = Client()
@@ -58,7 +62,7 @@ class TestViews(TestCase):
 
 	def test_consultar_cola(self):
 		""" Funcion test para comprobar que una peticion get de consultar_cola obtiene el 
-				codigo de respuesta 200 (exito)
+codigo de respuesta 200 (exito)
 		"""
 
 		cliente = Client()
@@ -71,7 +75,7 @@ class TestViews(TestCase):
 
 	def test_formulario_consultar_cola(self):
 		""" Funcion test para comprobar que el formulario de consultar_cola obtiene una respuesta 
-				correcta al introducir un elemento que no existe.
+correcta al introducir un elemento que no existe.
 		"""
 
 		cliente = Client()

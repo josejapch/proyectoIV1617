@@ -1,7 +1,9 @@
+""" Vistas de la aplicacion QUEUEme
+"""
+
 from django.shortcuts import render
 from .models import Cola
 from .forms import ConsultarColaForm
-# Create your views here.
 
 def home(request):
 
@@ -11,9 +13,9 @@ def home(request):
 
 def consultar_cola(request):
 	""" Funcion para procesar el formulario para consultar informacion de una cola.
-			Si se encuentra la cola, se vuelve a la pagina del formulario con la informacion de la cola y se
-			muestra el formulario para una nueva consulta.
-			Si no se encuentra o aun no se ha realizado la consulta, se muestra el formulario de la consulta.
+Si se encuentra la cola, se vuelve a la pagina del formulario con la informacion de la cola y se
+muestra el formulario para una nueva consulta.
+Si no se encuentra o aun no se ha realizado la consulta, se muestra el formulario de la consulta.
 	"""
 	if request.method == "POST":
 		form = ConsultarColaForm(request.POST)
