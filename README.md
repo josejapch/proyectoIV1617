@@ -36,7 +36,7 @@ Se han realizado distintos test guiándonos con la [documentación de Django](ht
 ####2.2. Integración continua.
 Para la intregación continua se ha empleado [Travis CI](https://travis-ci.org/). Para la integración en Travis CI se ha creado el archivo [.travis.yml](https://github.com/josejapch/proyectoIV1617/blob/master/.travis.yml), el cual indica la versión de Python que se ha empleado, el comando para la instalación de dependencias (a través del archivo [requirements.txt](https://github.com/josejapch/proyectoIV1617/blob/master/requirements.txt)) y la ejecución de los test anteriormente comentados. Gracias al uso de Travis CI, cada vez que modifiquemos el repositorio (realicemos un push), se aplicarán los test de forma autmática para comprobar que todo funciona correctamente. Al principio de este documento podemos ver la imagen de estado de la aplicación.
 
-[Informacion extra: Configuración Travis CI](https://github.com/josejapch/documentacion-Proyecto-IV/blob/master/hito1.md)
+[Informacion extra: Configuración Travis CI](https://github.com/josejapch/documentacion-Proyecto-IV/blob/master/hito2.md)
 
 ####2.3. Makefile.
 Se ha creado un [makefile](https://github.com/josejapch/proyectoIV1617/blob/master/Makefile) para automatizar instalación de herramientas y dependencias, y realización de test una vez clonado el proyecto.
