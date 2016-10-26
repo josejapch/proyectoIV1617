@@ -31,14 +31,17 @@ Necesitaremos servidores para el frontend, despliegue de la aplicación, base de
 
 ## **2. Test e integración continua.**
 ####2.1. Test.
-Se han realizado distintos test guiándonos con la [documentación de Django](https://docs.djangoproject.com/en/1.10/topics/testing/) (consultada en octubre de 2016). Estos test actúan sobre models y views comprobando que se insertan elementos correctamente y se responde correctamente a las peticiones de las vistas. Podemos encontrarlos en [queue/tests.py](https://github.com/josejapch/proyectoIV1617/blob/master/queue/tests.py).
+Se han realizado distintos test guiándonos con la [documentación de Django](https://docs.djangoproject.com/en/1.10/topics/testing/) (consultada en octubre de 2016). Utilizamos [unittest](https://docs.python.org/2/library/unittest.html), un módulo de Python para construir, ejecutar y automatizar test. Estos test actúan sobre models y views comprobando que se insertan elementos correctamente y se responde correctamente a las peticiones de las vistas. Podemos encontrarlos en [queue/tests.py](https://github.com/josejapch/proyectoIV1617/blob/master/queue/tests.py).
 
 ####2.2. Integración continua.
-Para la intregación continua se ha empleado [Travis CI](https://travis-ci.org/). Para la integración en Travis CI se ha creado el archivo [.travis.yml](https://github.com/josejapch/proyectoIV1617/blob/master/.travis.yml), el cual indica la versión de Python que se ha empleado, el comando para la instalación de dependencias (a través del archivo [requirements.txt](https://github.com/josejapch/proyectoIV1617/blob/master/requirements.txt)) y la ejecución de los test anteriormente comentados. Gracias al uso de Travis CI, cada vez que modifiquemos el repositorio (realicemos un push), se aplicarán los test de forma autmática para comprobar que todo funciona correctamente. Al principio de este documento podemos ver la imagen de estado de la aplicación.
+Para la intregación continua se ha empleado [Travis CI](https://travis-ci.org/). Para la configuración de Travis CI se ha creado el archivo [.travis.yml](https://github.com/josejapch/proyectoIV1617/blob/master/.travis.yml), el cual indica la versión de Python que utiliza la aplicación, el comando para la instalación de dependencias (a través del makefile de la aplicación web, que hace uso del archivo [requirements.txt](https://github.com/josejapch/proyectoIV1617/blob/master/requirements.txt)) y la ejecución de los test anteriormente comentados. Gracias al uso de Travis CI, cada vez que modifiquemos el repositorio (realicemos un push), se aplicarán los test de forma automática para comprobar que todo funciona correctamente. Al principio de este documento podemos ver la imagen de estado de la aplicación.
 
 [Informacion extra: Configuración Travis CI](https://github.com/josejapch/documentacion-Proyecto-IV/blob/master/hito2.md)
 
 ####2.3. Makefile.
-Se ha creado un [makefile](https://github.com/josejapch/proyectoIV1617/blob/master/Makefile) para automatizar instalación de herramientas y dependencias, y realización de test una vez clonado el proyecto.
+Se ha creado un [makefile](https://github.com/josejapch/proyectoIV1617/blob/master/Makefile) para automatizar instalación de herramientas y dependencias, y realización de test una vez clonado el proyecto:
+- install: Instalar Python y pip.
+- install-requirements: Instalar dependencias de la aplicación web (excepto Python).
+- test: Realizar los test de la aplicación.
 
 **Inscrito en el Certamen de Proyectos Libres de la UGR 2016-2017**
