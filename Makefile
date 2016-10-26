@@ -1,8 +1,10 @@
 install:
-	sudo apt-get update
-	sudo apt-get install -y python-dev
-	sudo apt-get install -y python-pip
-	sudo pip install -r requirements.txt
+	apt-get update
+	apt-get install -y python-dev
+	apt-get install -y python-pip
+
+install-requirements:
+	pip install -r requirements.txt
 
 test:
 	python manage.py test
