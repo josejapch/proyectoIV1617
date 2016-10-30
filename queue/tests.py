@@ -29,11 +29,14 @@ class TestModelos(TestCase):
 	def test_insertar_modelo_encolado(self):
 		""" Funcion test para comprobar las inserciones de encolados 
 		"""
+		cola = Cola(codigo_cola="codTest", propietario="propTest",nombre_cola="nomTest",descripcion="Esto es un test")
+		cola.save()
 
-		encolado = Encolado(codigo_cola="codTest",nick_encolado="nickTest")
+		cola = Cola.objects.get(codigo_cola="codTest")
+		encolado = Encolado(codigo_cola=cola,nick_encolado="nickTest")
 		encolado.save()
 
-		enComp = Encolado.objects.get(codigo_cola="codTest")
+		enComp = Encolado.objects.get(codigo_cola=cola)
 
 		self.assertEqual(encolado.codigo_cola,enComp.codigo_cola)
 		self.assertEqual(encolado.nick_encolado,enComp.nick_encolado)
