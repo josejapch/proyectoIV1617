@@ -7,3 +7,10 @@ class ConsultarColaForm(forms.ModelForm):
 	class Meta:
 		model = Cola
 		fields = ("codigo_cola",)
+
+class RegistrarColaForm(forms.ModelForm):
+	""" Formulario para consultar la informacion de una cola aportando el codigo de la cola. 
+	"""
+	class Meta:
+		model = Cola
+		fields = ("nombre_cola", "descripcion",)

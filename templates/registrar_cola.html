@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+	<div class='row'>
+	<div class='col-sm-6 col-sm-offset-3'>
+	<h1>Registrar cola</h1>
+	<form method="post" action=".">
+		{% csrf_token %}
+	{% if resultado %}
+	</br>
+	<h4>{{ resultado }}</h4></br>
+
+	{% endif %}
+		{{ form.as_p }}
+		<input class='btn btn-block btn-primary' type="submit" value="Registrar cola" />
+		<input type="hidden" name="next" value="{{ next }}" />
+	</form>
+	</div>
+	</div>
+{% else %}
+	<h4>Debe estar dado de alta para crear colas.</h4></br>
+{% endif %}
+
+{% endblock %}

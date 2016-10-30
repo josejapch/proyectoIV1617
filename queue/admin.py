@@ -1,9 +1,8 @@
 from django.contrib import admin
 from .models import Cola, Encolado
-# Register your models here.
 
 class AdminCola(admin.ModelAdmin):
-	list_display = ["codigo_cola","propietario","nombre_cola","descripcion"]
+	list_display = ["codigo_cola","propietario","nombre_cola","descripcion","integrantes"]
 	class Meta:
 		model = Cola
 

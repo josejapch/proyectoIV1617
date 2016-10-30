@@ -22,5 +22,6 @@ urlpatterns = [
 		url(r'^accounts/', include('registration.backends.default.urls')),
 
 		url(r'^$', views.home, name='home'),
-		url(r'^consultar_cola/$', views.consultar_cola, name='consultar_cola')
+		url(r'^consultar_cola/$', views.consultar_cola, name='consultar_cola'),
+		url(r'^registrar_cola/$', views.registrar_cola, name='registrar_cola')
 ]
