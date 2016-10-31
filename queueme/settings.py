@@ -94,7 +94,7 @@ ON_HEROKU = os.environ.get('ON_HEROKU')
 
 if ON_HEROKU:
 	DATABASES = {
-			'default': dj_database_url.config(default=DATABASE_URL)
+			'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 	}
 
 else:
