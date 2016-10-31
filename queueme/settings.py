@@ -93,9 +93,8 @@ WSGI_APPLICATION = 'queueme.wsgi.application'
 ON_HEROKU = os.environ.get('ON_HEROKU')
 
 if ON_HEROKU:
-	DB_URL = 'postgres://yilvyofmtxdetc:IDAAgf_SAN3fxLGkhutR7Ld9Ow@ec2-54-243-201-144.compute-1.amazonaws.com:5432/d6jh9pmq8voti7'
 	DATABASES = {
-			'default': dj_database_url.config(default=DB_URL)
+			'default': dj_database_url.config(default=DATABASE_URL)
 	}
 
 else:
