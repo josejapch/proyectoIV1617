@@ -27,16 +27,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '+xy7*va9n)d5vyd%n63yl!%mag6+s^62l5!&$n$l8bkt287d5j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
-
-EMAIL_HOST='smtp.gmail.com'
+#EMAIL_HOST='smtp.gmail.com'
 #Variables configuradas en el servidor de produccion
 #EMAIL_HOST_USER
 #EMAIL_HOST_PASSWORD
-EMAIL_PORT=587
-EMAIL_USE_TLS=True
+#EMAIL_PORT=587
+#EMAIL_USE_TLS=True
 
 
 # Application definition
