@@ -5,6 +5,8 @@ install:
 
 install-requirements:
 	pip install -r requirements.txt
+
+install-bd:
 	python manage.py makemigrations
 	python manage.py migrate
 
