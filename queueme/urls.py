@@ -19,7 +19,8 @@ from queue import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-		url(r'^accounts/', include('registration.backends.default.urls')),
+		#url(r'^accounts/', include('registration.backends.default.urls')),
+		url(r'^accounts/', include('registration.backends.simple.urls')),
 
 		url(r'^$', views.home, name='home'),
 		url(r'^consultar_cola/$', views.consultar_cola, name='consultar_cola'),
