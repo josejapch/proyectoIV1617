@@ -31,21 +31,28 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
+EMAIL_HOST='smtp.gmail.com'
+#Variables configuradas en el servidor de produccion
+#EMAIL_HOST_USER
+#EMAIL_HOST_PASSWORD
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+
 
 # Application definition
 
 INSTALLED_APPS = [
 		#django
     'django.contrib.admin',
-    'django.contrib.auth',
 		'django.contrib.sites',
+		'registration', #Registration Redux, recomendado que este justo antes de contrib.Auth
+    'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 		#terceros
 		'crispy_forms',
-		'registration',
 		#mi app
 		'queue',
 ]
@@ -147,7 +154,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 #Registration
 ACCOUNT_ACTIVAVTION_DAYS = 14
-REGISTRATION_AUTO_LOGIN = True
+REGISTRATION_AUTO_LOGIN = False
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 
