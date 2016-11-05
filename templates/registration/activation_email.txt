@@ -1,5 +1,5 @@
 {% load i18n %}
-{% trans "Activación de cuenta en " %} {{ site.name }}:
+{% trans "Activación de cuenta en Queueme" %}
 
 Gracias por registrarte en QUEUEme.
 
