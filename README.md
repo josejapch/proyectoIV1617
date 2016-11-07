@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/josejapch/proyectoIV1617.svg?branch=master)](https://travis-ci.org/josejapch/proyectoIV1617)
 
+[![Heroku](http://i66.tinypic.com/2d2ja74.jpg)](https://queueme.herokuapp.com/)
+
 Repositorio de QUEUEme, práctica de la asignatura Infraestructura Virtual del Grado de Ingeniería Informática de la universidad de Granada.
 
 ## **1. Introducción**
@@ -42,6 +44,12 @@ Para la intregación continua se ha empleado [Travis CI](https://travis-ci.org/)
 Se ha creado un [makefile](https://github.com/josejapch/proyectoIV1617/blob/master/Makefile) para automatizar instalación de herramientas y dependencias, y realización de test una vez clonado el proyecto:
 - install: Instalar Python y pip.
 - install-requirements: Instalar dependencias de la aplicación web (excepto Python).
+- install-bd: Hacer migraciones de los modelos y crear la base de datos.
 - test: Realizar los test de la aplicación.
+
+## **3. Despliegue en un PaaS.**
+Se ha realizado el despliegue de la aplicación en Heroku. Como base de datos se ha empleado la que la propia Heroku proporciona y que está alojada en AmazonAWS. Además, se porporciona un [script](https://github.com/josejapch/proyectoIV1617/blob/master/deploy_heroku.sh) con el que automatizamos el despliegue (teniendo previamente una cuenta) en Heroku tras clonar el proyecto.
+
+[Informacion extra: Despliegue y automatización en Heroku](https://github.com/josejapch/documentacion-Proyecto-IV/blob/master/hito3.md)
 
 **Inscrito en el Certamen de Proyectos Libres de la UGR 2016-2017**
