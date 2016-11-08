@@ -19,10 +19,10 @@ from queue import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-		#url(r'^accounts/', include('registration.backends.default.urls')),
 		url(r'^accounts/', include('registration.backends.simple.urls')),
 
 		url(r'^$', views.home, name='home'),
 		url(r'^consultar_cola/$', views.consultar_cola, name='consultar_cola'),
-		url(r'^registrar_cola/$', views.registrar_cola, name='registrar_cola')
+		url(r'^registrar_cola/$', views.registrar_cola, name='registrar_cola'),
+		url(r'^consultar_colaJSON/$', views.consultar_colaJSON, name='consultar_colaJSON'),
 ]
