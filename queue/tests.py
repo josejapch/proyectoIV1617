@@ -1,6 +1,8 @@
 from django.test import TestCase
 from django.test.client import Client
 from django.core.urlresolvers import reverse
+from rest_framework.test import APITestCase
+from rest_framework import status
 from queue.models import Cola, Encolado
 from queue.views import home, consultar_cola
 
@@ -88,6 +90,45 @@ correcta al introducir un elemento que no existe.
 
 		print "OK. Se ha respondido con exito a la peticion post de consultar_cola."
 
+
+	def test_consultar_colaJSON(self):
+		""" Funcion test para comprobar que una peticion get de consultar_colaJSON obtiene el 
+codigo de respuesta 200 (exito)
+		"""
+
+		cliente = Client()
+		respuesta = cliente.get(reverse("consultar_colaJSON"))
+
+		self.assertEqual(respuesta.status_code,200)
+
+		print "OK. Se ha respondido con exito a la peticion get de consultar_colaJSON."
+
+
+	def test_formulario_consultar_cola(self):
+		""" Funcion test para comprobar que el formulario de consultar_colaJSON obtiene una respuesta 
+correcta al introducir un elemento que no existe.
+		"""
+
+		cliente = Client()
+		respuesta = cliente.post("/consultar_colaJSON/",{"codigo_cola":"codTest4"})
+
+		self.assertEqual(respuesta.status_code,200)
+
+		print "OK. Se ha respondido con exito a la peticion post de consultar_colaJSON."
+
+
+class TestJson(APITestCase):
+	def test_consultar_ColaJSON(self):
+		""" Funcion test para comprobar que se devuelve un JSON ante una consulta en consultar_colaJSON
+		"""
+		
+		cliente = Client()
+		Cola.objects.create(codigo_cola='codTestj',nombre_cola='nombreCola',propietario='admintest',descripcion='Test json')
+		respuesta = cliente.post("/consultar_colaJSON/",{"codigo_cola":"codTestj"})
+
+		self.assertEqual(respuesta['Content-Type'],'application/json')
+
+		print "OK. Se ha respondido con una respuesta JSON."
 
 if __name__ == '__main__':
 	unittest.main()
