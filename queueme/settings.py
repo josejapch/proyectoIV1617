@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 		#terceros
 		'crispy_forms',
+		'rest_framework',
 		#mi app
 		'queue',
 ]
