@@ -48,7 +48,7 @@ Se ha creado un [makefile](https://github.com/josejapch/proyectoIV1617/blob/mast
 - test: Realizar los test de la aplicación.
 
 ## **3. Despliegue en un PaaS.**
-Se ha realizado el despliegue de la aplicación en Heroku. Como base de datos se ha empleado la que la propia Heroku proporciona y que está alojada en AmazonAWS. Además, se porporciona un [script](https://github.com/josejapch/proyectoIV1617/blob/master/deploy_heroku.sh) con el que automatizamos el despliegue (teniendo previamente una cuenta) en Heroku tras clonar el proyecto.
+Se ha realizado el despliegue de la aplicación en Heroku. Como base de datos se ha empleado la que la propia Heroku proporciona (PostgreSQL) y que está alojada en AmazonAWS. Además, se porporciona un [script](https://github.com/josejapch/proyectoIV1617/blob/master/deploy_heroku.sh) con el que automatizamos el despliegue (teniendo previamente una cuenta) en Heroku tras clonar el proyecto.
 
 [Informacion extra: Despliegue y automatización en Heroku](https://github.com/josejapch/documentacion-Proyecto-IV/blob/master/hito3.md)
 
