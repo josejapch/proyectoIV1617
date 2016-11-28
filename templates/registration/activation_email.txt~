@@ -1,11 +1,11 @@
 {% load i18n %}
-{% trans "Activate account at" %} {{ site.name }}:
+{% trans "Activación de cuenta en " %} {{ site.name }}:
 
-Hello there!
+Gracias por registrarte en QUEUEme.
 
-Click the link below to activate your account.
+Haz click en el enlace para activar tu cuenta.
 
 http://{{ site.domain }}{% url 'registration_activate' activation_key %}
 
 
-{% blocktrans %}The above link is valid for {{ expiration_days }} days.{% endblocktrans %}
+{% blocktrans %}El enlace tiene una validez de {{ expiration_days }} días.{% endblocktrans %}
