@@ -54,4 +54,13 @@ Se ha realizado el despliegue de la aplicación en Heroku. Como base de datos se
 
 [Informacion extra: Despliegue y automatización en Heroku](https://github.com/josejapch/documentacion-Proyecto-IV/blob/master/hito3.md)
 
+## **4. Entorno de pruebas.**
+Para el entorno de pruebas se empleado Docker (gestor de contenedores). Se ha creado una imagen disponible en [dockerHub](https://hub.docker.com/r/josejapch/proyectoiv1617/), la cual contiene una versión ligera de la última versión disponible de Ubuntu, los requisitos de la aplicación y la aplicación web instalados.
+
+Se puede obtener esta imagen usando (teniendo previamente Docker instalado) el comando: ```docker pull josejapch/proyectoiv1617```. La actualización de la imagen está sincronizada con GitHub, por lo que siempre contendrá la última versión de la aplicación web.
+
+Además, se dispone del script [docker-up.sh](https://github.com/josejapch/proyectoIV1617/blob/master/docker-up.sh) para que, con un solo paso, se instale Docker (si no está instalado), se obtenga la imagen y se ejecute.
+
+[Información extra: Creación de un entorno de pruebas para la aplicación usando contenedores](https://github.com/josejapch/documentacion-Proyecto-IV/blob/master/hito4.md)
+
 **Inscrito en el Certamen de Proyectos Libres de la UGR 2016-2017**
