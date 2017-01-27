@@ -1,0 +1,35 @@
+Vagrant.configure(2) do |config|
+  config.vm.box = 'azure'
+	config.vm.box_url = 'https://github.com/msopentech/vagrant-azure/raw/master/dummy.box'
+
+  config.vm.network "public_network"
+	config.vm.network "private_network",ip: "192.168.56.10", virtualbox__intnet: "vboxnet0"
+  config.vm.network "forwarded_port", guest: 80, host: 80
+  config.vm.define "localhost" do |l|
+          l.vm.hostname = "localhost"
+	end
+
+	# use local ssh key to connect to remote vagrant box
+	config.ssh.private_key_path = '~/.ssh/id_rsa'
+  config.vm.provider :azure do |azure, override|
+
+		azure.vm_image_urn = 'Canonical:UbuntuServer:14.04.3-LTS:14.04.201508050'
+		azure.vm_size = 'Standard_D1'
+		azure.location = 'westeurope'
+		azure.vm_name = 'queuevm'
+		azure.vm_password = ''
+		azure.tcp_endpoints = '80:80'
+		
+		# use Azure Active Directory Application / Service Principal to connect to Azure
+    azure.tenant_id = ''
+		azure.client_id = ''
+		azure.client_secret = ''
+		azure.subscription_id = ''
+  end
+
+  config.vm.provision "ansible" do |ansible|
+        ansible.sudo = true
+        ansible.playbook = "queueplaybook.yml"
+        ansible.verbose = "v"
+  end
+end
