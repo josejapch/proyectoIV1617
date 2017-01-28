@@ -17,14 +17,14 @@ Vagrant.configure(2) do |config|
 		azure.vm_size = 'Standard_D1'
 		azure.location = 'westeurope'
 		azure.vm_name = 'queuevm'
-		azure.vm_password = ''
+		azure.vm_password = 'aabbcc11'
 		azure.tcp_endpoints = '80:80'
 		
 		# use Azure Active Directory Application / Service Principal to connect to Azure
-    azure.tenant_id = ''
-		azure.client_id = ''
-		azure.client_secret = ''
-		azure.subscription_id = ''
+    azure.tenant_id = ENV['AZURE_TENANT_ID']
+		azure.client_id = ENV['AZURE_CLIENT_ID']
+		azure.client_secret = ENV['AZURE_CLIENT_SECRET']
+		azure.subscription_id = ENV['AZURE_SUBSCRIPTION_ID']
   end
 
   config.vm.provision "ansible" do |ansible|

@@ -7,7 +7,7 @@ def install_app():
 	run('sudo python proyectoIV1617/manage.py migrate')
 
 def app_up():
-	run('sudo nohup python proyectoIV1617/manage.py runserver 0.0.0.0:80 &')
+	run('sudo python proyectoIV1617/manage.py runserver 0.0.0.0:80')
 
 def test_app():
 	run('python proyectoIV1617/manage.py test')
