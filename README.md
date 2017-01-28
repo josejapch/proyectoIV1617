@@ -6,6 +6,8 @@
 
 [![Docker](http://i63.tinypic.com/2dqt74p.jpg)](https://hub.docker.com/r/josejapch/proyectoiv1617/)
 
+[Despliegue en Azure](http://winter-glitter-24.westeurope.cloudapp.azure.com/)
+
 Repositorio de QUEUEme, práctica de la asignatura Infraestructura Virtual del Grado de Ingeniería Informática de la universidad de Granada.
 
 ## **1. Introducción**
@@ -62,5 +64,16 @@ Se puede obtener esta imagen usando (teniendo previamente Docker instalado) el c
 Además, se dispone del script [docker-up.sh](https://github.com/josejapch/proyectoIV1617/blob/master/docker-up.sh) para que, con un solo paso, se instale Docker (si no está instalado), se obtenga la imagen y se ejecute.
 
 [Información extra: Creación de un entorno de pruebas para la aplicación usando contenedores](https://github.com/josejapch/documentacion-Proyecto-IV/blob/master/hito4.md)
+
+**Inscrito en el Certamen de Proyectos Libres de la UGR 2016-2017**
+
+## **5. Despliegue en un IaaS.**
+Se ha realizado el despligue de la aplicación en Azure. Se ha empleado Vagrant como herramienta para crear la máquina virtual que contendrá la aplicación web, Ansible para su provisionamiento y Fabric para instalarla y ponerla en ejecución. El [Vagrantfile](https://github.com/josejapch/proyectoIV1617/blob/master/azure/Vagrantfile) para la creación de la máquina virtual, [playbook](https://github.com/josejapch/proyectoIV1617/blob/master/azure/queueplaybook.yml) de Ansible para el provisionamiento y [fabfile](https://github.com/josejapch/proyectoIV1617/blob/master/azure/fabfile.py) para el acceso remoto se encuentran en la carpeta [azure](https://github.com/josejapch/proyectoIV1617/tree/master/azure).
+
+Además, se dispone del script [vm_azure.sh](https://github.com/josejapch/proyectoIV1617/blob/master/vm_azure.sh) para automatizar el proceso de creación de la máquina virtual en Azure. Este script deberá ser editado rellenando las variables de entorno con los datos de la cuenta de Azure propia del usuario.
+
+También se proporciona el script [installandplay_azure.sh](https://github.com/josejapch/proyectoIV1617/blob/master/installandplay_azure.sh) para automatizar el proceso de descarga e instalación de la aplicación en la máquina virtual. El usuario deberá pasar como parámetro el nombre de DNS de la máquina virtual donde quiera instalarla.
+
+[Información extra: Diseño del soporte virtual para el despliegue de una aplicación](https://github.com/josejapch/documentacion-Proyecto-IV/blob/master/hito5.md)
 
 **Inscrito en el Certamen de Proyectos Libres de la UGR 2016-2017**
