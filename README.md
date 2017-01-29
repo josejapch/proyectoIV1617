@@ -65,11 +65,18 @@ Además, se dispone del script [docker-up.sh](https://github.com/josejapch/proye
 
 [Información extra: Creación de un entorno de pruebas para la aplicación usando contenedores](https://github.com/josejapch/documentacion-Proyecto-IV/blob/master/hito4.md)
 
-**Inscrito en el Certamen de Proyectos Libres de la UGR 2016-2017**
-
 ## **5. Despliegue en un IaaS.**
 Se ha realizado el despligue de la aplicación en Azure. Se ha empleado Vagrant como herramienta para crear la máquina virtual que contendrá la aplicación web, Ansible para su provisionamiento y Fabric para instalarla y ponerla en ejecución. El [Vagrantfile](https://github.com/josejapch/proyectoIV1617/blob/master/azure/Vagrantfile) para la creación de la máquina virtual, [playbook](https://github.com/josejapch/proyectoIV1617/blob/master/azure/queueplaybook.yml) de Ansible para el provisionamiento y [fabfile](https://github.com/josejapch/proyectoIV1617/blob/master/azure/fabfile.py) para el acceso remoto se encuentran en la carpeta [azure](https://github.com/josejapch/proyectoIV1617/tree/master/azure).
 
+####5.1. Funciones fabfile.py
+Las funciones de acceso remoto a través de Fabric disponibles son:
+- install_app: Función para descargar e instalar la aplicación.
+- app_up: Función para poner en marcha la aplicación.
+- test_app: Función para ejecutar los test de la aplicación.
+- app_down: Función para apagar la aplicación.
+- delete_app: Función para eliminar la aplicación.
+
+####5.2. Script
 Además, se dispone del script [vm_azure.sh](https://github.com/josejapch/proyectoIV1617/blob/master/vm_azure.sh) para automatizar el proceso de creación de la máquina virtual en Azure. Este script deberá ser editado rellenando las variables de entorno con los datos de la cuenta de Azure propia del usuario.
 
 También se proporciona el script [installandplay_azure.sh](https://github.com/josejapch/proyectoIV1617/blob/master/installandplay_azure.sh) para automatizar el proceso de descarga e instalación de la aplicación en la máquina virtual. El usuario deberá pasar como parámetro el nombre de DNS de la máquina virtual donde quiera instalarla.

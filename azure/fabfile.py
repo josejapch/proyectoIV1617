@@ -11,3 +11,9 @@ def app_up():
 
 def test_app():
 	run('python proyectoIV1617/manage.py test')
+
+def app_down():
+	run('sudo pkill python')
+
+def delete_app():
+	run('sudo rm -Rf proyectoIV1617')
