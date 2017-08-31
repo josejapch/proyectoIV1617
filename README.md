@@ -14,7 +14,7 @@ Repositorio de QUEUEme, práctica de la asignatura Infraestructura Virtual del G
 
 ## **1. Introducción**
 
-####1.1. Descripción de la aplicación.
+### 1.1. Descripción de la aplicación.
 QUEUEme se trata de una aplicación web para la gestión de turnos. Su funcionamiento consiste en:
 
 
@@ -32,7 +32,7 @@ Un usuario no registrado podrá (además de unirse a una cola):
 
 *NOTA: Al estar aún en desarrollo puede que la funcionalidad de la aplicación se vea modificada añadiendole nuevas funciones.*
 
-####1.2. Infraestructura y herramientas.
+### 1.2. Infraestructura y herramientas.
 
 La aplicación se desarrollará con el framework Django, lo que  implica el uso del lenguaje de programación Python. Además debemos automatizar tareas mediante scripts, realizar pruebas, realizar despliegue continuo... Las herramientas para realizar estas tareas se especificarán según vaya avanzando el proyecto.
 
@@ -40,15 +40,15 @@ Necesitaremos servidores para el frontend, despliegue de la aplicación, base de
 
 
 ## **2. Test e integración continua.**
-####2.1. Test.
+#### 2.1. Test.
 Se han realizado distintos test guiándonos con la [documentación de Django](https://docs.djangoproject.com/en/1.10/topics/testing/) (consultada en octubre de 2016). Utilizamos [unittest](https://docs.python.org/2/library/unittest.html), un módulo de Python para construir, ejecutar y automatizar test. Estos test actúan sobre models y views comprobando que se insertan elementos correctamente y se responde correctamente a las peticiones de las vistas. Podemos encontrarlos en [queue/tests.py](https://github.com/josejapch/proyectoIV1617/blob/master/queue/tests.py).
 
-####2.2. Integración continua.
+#### 2.2. Integración continua.
 Para la intregación continua se ha empleado [Travis CI](https://travis-ci.org/). Para la configuración de Travis CI se ha creado el archivo [.travis.yml](https://github.com/josejapch/proyectoIV1617/blob/master/.travis.yml), el cual indica la versión de Python que utiliza la aplicación, el comando para la instalación de dependencias (a través del makefile de la aplicación web, que hace uso del archivo [requirements.txt](https://github.com/josejapch/proyectoIV1617/blob/master/requirements.txt)) y la ejecución de los test anteriormente comentados. Gracias al uso de Travis CI, cada vez que modifiquemos el repositorio (realicemos un push), se aplicarán los test de forma automática para comprobar que todo funciona correctamente. Al principio de este documento podemos ver la imagen de estado de la aplicación.
 
 [Informacion extra: Configuración Travis CI](https://github.com/josejapch/documentacion-Proyecto-IV/blob/master/hito2.md)
 
-####2.3. Makefile.
+#### 2.3. Makefile.
 Se ha creado un [makefile](https://github.com/josejapch/proyectoIV1617/blob/master/Makefile) para automatizar instalación de herramientas y dependencias, y realización de test una vez clonado el proyecto:
 - install: Instalar Python y pip.
 - install-requirements: Instalar dependencias de la aplicación web (excepto Python).
@@ -72,7 +72,7 @@ Además, se dispone del script [docker-up.sh](https://github.com/josejapch/proye
 ## **5. Despliegue en un IaaS.**
 Se ha realizado el despligue de la aplicación en Azure. Se ha empleado Vagrant como herramienta para crear la máquina virtual que contendrá la aplicación web, Ansible para su provisionamiento y Fabric para instalarla y ponerla en ejecución. El [Vagrantfile](https://github.com/josejapch/proyectoIV1617/blob/master/azure/Vagrantfile) para la creación de la máquina virtual, [playbook](https://github.com/josejapch/proyectoIV1617/blob/master/azure/queueplaybook.yml) de Ansible para el provisionamiento y [fabfile](https://github.com/josejapch/proyectoIV1617/blob/master/azure/fabfile.py) para el acceso remoto se encuentran en la carpeta [azure](https://github.com/josejapch/proyectoIV1617/tree/master/azure).
 
-####5.1. Funciones fabfile.py
+#### 5.1. Funciones fabfile.py
 Las funciones de acceso remoto a través de Fabric disponibles son:
 - install_app: Función para descargar e instalar la aplicación.
 - app_up: Función para poner en marcha la aplicación.
@@ -80,7 +80,7 @@ Las funciones de acceso remoto a través de Fabric disponibles son:
 - app_down: Función para apagar la aplicación.
 - delete_app: Función para eliminar la aplicación.
 
-####5.2. Script
+#### 5.2. Script
 Además, se dispone del script [vm_azure.sh](https://github.com/josejapch/proyectoIV1617/blob/master/vm_azure.sh) para automatizar el proceso de creación de la máquina virtual en Azure. Este script deberá ser editado rellenando las variables de entorno con los datos de la cuenta de Azure propia del usuario.
 
 También se proporciona el script [installandplay_azure.sh](https://github.com/josejapch/proyectoIV1617/blob/master/installandplay_azure.sh) para automatizar el proceso de descarga e instalación de la aplicación en la máquina virtual. El usuario deberá pasar como parámetro el nombre de DNS de la máquina virtual donde quiera instalarla.
