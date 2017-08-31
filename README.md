@@ -10,9 +10,9 @@
 
 Repositorio de QUEUEme, práctica de la asignatura Infraestructura Virtual del Grado de Ingeniería Informática de la universidad de Granada.
 
-## **1. Introducción**
+**Nota Sobre la aplicación web: Por el momento no se va a continuar el desarrollo de la aplicación web en este repositorio. Este se mantendrá exclusivamente como entrega para la asignatura de Infraestructuras Virtuales.**
 
-#### **Nota Sobre la aplicación web:** Por el momento no se va a continuar el desarrollo de la aplicación web en este repositorio. Este se mantendrá exclusivamente como entrega para la asignatura de Infraestructuras Virtuales.
+## **1. Introducción**
 
 ####1.1. Descripción de la aplicación.
 QUEUEme se trata de una aplicación web para la gestión de turnos. Su funcionamiento consiste en:
