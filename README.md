@@ -11,6 +11,9 @@
 Repositorio de QUEUEme, práctica de la asignatura Infraestructura Virtual del Grado de Ingeniería Informática de la universidad de Granada.
 
 ## **1. Introducción**
+
+#### **Nota Sobre la aplicación web:** Por el momento no se va a continuar el desarrollo de la aplicación web en este repositorio. Este se mantendrá exclusivamente como entrega para la asignatura de Infraestructuras Virtuales.
+
 ####1.1. Descripción de la aplicación.
 QUEUEme se trata de una aplicación web para la gestión de turnos. Su funcionamiento consiste en:
 
@@ -34,6 +37,7 @@ Un usuario no registrado podrá (además de unirse a una cola):
 La aplicación se desarrollará con el framework Django, lo que  implica el uso del lenguaje de programación Python. Además debemos automatizar tareas mediante scripts, realizar pruebas, realizar despliegue continuo... Las herramientas para realizar estas tareas se especificarán según vaya avanzando el proyecto.
 
 Necesitaremos servidores para el frontend, despliegue de la aplicación, base de datos que gestionará las colas y registros de los usuarios, y gestión de correos.
+
 
 ## **2. Test e integración continua.**
 ####2.1. Test.
